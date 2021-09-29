@@ -6,9 +6,10 @@ export default class GaangItems extends Component {
             <div>
                 <ul>
                     <p>{this.props.name}</p>
-                    <p>{this.props.title}</p>
+                    <p>Also Known As: The {this.props.title}</p>
+                    <p>Main Element:{this.props.element}</p>
                     <p><img src={this.props.img} alt='the Gaang'/></p>
-                    <p>{this.props.element}</p>
+                 
                 </ul>
             </div>
         )
