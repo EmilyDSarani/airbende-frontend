@@ -1,13 +1,13 @@
 // loosely based off my pokesearch lab, I just want to create this for fun
-import React, { Component } from 'react'
-import Home from "./Home.js"
-import Gaang from "./Gaang.js"
+import React, { Component } from 'react';
+import Home from "./Home.js";
+import Gaang from "./Gaang.js";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
-} from "react-router-dom"
+} from "react-router-dom";
 export default class App extends Component {
   render() {
     return (
