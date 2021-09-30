@@ -13,9 +13,9 @@ export default class App extends Component {
     return (
       <>
         <Router>
-        <header>
-          <NavLink exact activeClassName='active' to='/'>Home</NavLink>
-          <NavLink exact activeClassName='active' to='/Gaang'>Gaang</NavLink>
+        <header className= 'not'>
+          <NavLink exact activeClassName='active'  to='/'>Home</NavLink>
+          <NavLink exact activeClassName='active'  to='/Gaang'>Gaang</NavLink>
         </header>
         <Switch>
           <Route
