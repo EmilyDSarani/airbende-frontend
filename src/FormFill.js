@@ -6,7 +6,7 @@ export default class FormFill extends Component {
         return (
             <>
                 <Intro />
-                <CreatePage />
+                <CreatePage {...this.props} /> {/* this is saying "lets grab everything in this and display it*/}
             </>
         )
     }
