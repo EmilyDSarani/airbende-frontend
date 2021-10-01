@@ -20,6 +20,7 @@
   font-size: xx-large;
   text-align: center;
   justify-content: center;
+   
 }
 .header{
   font-family: 'Herculanum';
@@ -28,4 +29,18 @@
   font-family: 'Herculanum';
   color: rgb(0, 0, 63);
   font-size: large;
+}
+.gaangimg{
+  text-align: center;
+  justify-content: center;
+  width: 70%;
+  height:auto;
+  
+}
+.allgang{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  
+  max-width:100%;
+  height:auto;
 }
