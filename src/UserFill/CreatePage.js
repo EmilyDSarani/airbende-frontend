@@ -4,7 +4,7 @@ import request from 'superagent'
 export default class CreatePage extends Component {
     state={
         name: '',
-        element: '',
+        element_name: '',
         img: '',
         title: '',
     }
@@ -14,7 +14,7 @@ export default class CreatePage extends Component {
             .post('https://airbendercharacters.herokuapp.com/avatar')
             .send({
                 name: this.state.name, 
-                element: this.state.element, 
+                element_name: this.state.element_name, 
                 img: this.state.img, 
                 title: this.state.title
             })
@@ -24,8 +24,8 @@ export default class CreatePage extends Component {
     handleNameSubmit = async(e) =>{
         await this.setState({name:e.target.value});
     }
-    handleElementSubmit = async(e) =>{
-        await this.setState({element:e.target.value});
+    handleElementNameSubmit = async(e) =>{
+        await this.setState({element_name:e.target.value});
     } 
     handleImgSubmit = async(e) =>{
         await this.setState({img:e.target.value});
@@ -45,7 +45,7 @@ export default class CreatePage extends Component {
             </labels>
             <labels>
             Element
-                <input className="input" onChange={this.handleElementSubmit} />
+                <input className="input" onChange={this.handleElementNameSubmit} />
 
             </labels>
             <labels>
