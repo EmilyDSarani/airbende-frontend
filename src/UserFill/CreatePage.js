@@ -4,9 +4,10 @@ import request from 'superagent'
 export default class CreatePage extends Component {
     state={
         name: '',
-        element_name: '',
+        elements: [],
         img: '',
         title: '',
+        element_name: '',
     }
     handleSubmit = async (e)  =>{
         e.preventDefault()
@@ -24,8 +25,9 @@ export default class CreatePage extends Component {
     handleNameSubmit = async(e) =>{
         await this.setState({name:e.target.value});
     }
-    handleElementNameSubmit = async(e) =>{
-        await this.setState({element_name:e.target.value});
+  compenentDidMount= async() => {
+        await element_name = await getElement
+        this.setState({element_name:element_name});
     } 
     handleImgSubmit = async(e) =>{
         await this.setState({img:e.target.value});
