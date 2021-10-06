@@ -8,7 +8,7 @@ export async function getAllAvatar() {
 }
 
 export async function getElements() {
-    const response = await request.get(`https://airbendercharacters.herokuapp.com/element}`)
+    const response = await request.get(`https://airbendercharacters.herokuapp.com/elements`)
 
     return response.body;
 }
