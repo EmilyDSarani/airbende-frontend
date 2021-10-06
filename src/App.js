@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 import Home from "./Home.js";
 import Gaang from "./Gaang.js";
 import FormFill from './FormFill.js';
-import Edit from './Edit.js';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
 } from "react-router-dom";
+import Edit from './Edit.js';
+
 export default class App extends Component {
   render() {
     return (

@@ -6,7 +6,7 @@ export default class GaangItems extends Component {
         return (
             <div className="gaang">
                 
-                <Link to ={`Edit/${this.props.id}`}>
+                <Link to ={`/Gaang/${this.props.id}`}>
                 <ul>
                     <p>{this.props.name}</p>
                     <p>Also Known As: The {this.props.title}</p>
