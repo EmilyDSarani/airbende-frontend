@@ -37,7 +37,7 @@ export default class App extends Component {
           render={(routerProps)=> <FormFill {...routerProps}/>}
           />
            <Route
-          path="/Edit"
+          path="/Gaang/:id"
           exact
           render={(routerProps)=> <Edit {...routerProps}/>}
           />

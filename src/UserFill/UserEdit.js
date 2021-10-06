@@ -5,7 +5,8 @@ import {
     getElements, 
     editsAvatar
 } from '../Utils/fetch-utils'
-export default class CreatePage extends Component {
+export default class UserEdit extends Component {
+
     state={
         name: '',
         elements: [],
@@ -13,27 +14,18 @@ export default class CreatePage extends Component {
         title: '',
         element_id: 1,
     }
+
     handleSubmit = async (e)  =>{
         e.preventDefault()
-        await editsAvatar(this.state)
-        // await request
-            // .put('https://airbendercharacters.herokuapp.com/avatar')
-            // .send({
-            //     name: this.state.name, 
-            //     element_id: this.state.element_id, 
-            //     img: this.state.img, 
-            //     title: this.state.title
-            // })
+        await editsAvatar(this.props.match.params.id, this.state)
+        
            
-       this.props.history.push('/Gaang') //this is like the window relocate
+       this.props.history.push('/Gaang') 
     }
-    // handleNameSubmit = async(e) =>{
-    //     await this.setState({name:e.target.value});
-    // }
 
   componentDidMount= async() => {
         const elements = await getElements()
-        const character = await getOneAvatar(this.props.match.id)
+        const character = await getOneAvatar(this.props.match.params.id)
         this.setState({elements : elements, 
                 ...character});
     } 
