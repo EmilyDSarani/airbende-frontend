@@ -8,8 +8,9 @@ export default class GaangList extends Component {
                 {
                     this.props.hotman.map(gaang => <GaangItems 
                         name= {gaang.name}
+                        id ={gaang.id}
                         title= {gaang.title}
-                        element= {gaang.element}
+                        element_name= {gaang.element_name}
                         img = {gaang.img}
                         />)
                 }

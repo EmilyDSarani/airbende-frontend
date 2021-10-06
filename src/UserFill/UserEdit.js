@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 //import request from 'superagent'
 import {
+    getOneAvatar,
     getElements, 
-    postAvatar
+    editsAvatar
 } from '../Utils/fetch-utils'
 export default class CreatePage extends Component {
     state={
@@ -14,9 +15,9 @@ export default class CreatePage extends Component {
     }
     handleSubmit = async (e)  =>{
         e.preventDefault()
-        await postAvatar(this.state)
+        await editsAvatar(this.state)
         // await request
-            // .post('https://airbendercharacters.herokuapp.com/avatar')
+            // .put('https://airbendercharacters.herokuapp.com/avatar')
             // .send({
             //     name: this.state.name, 
             //     element_id: this.state.element_id, 
@@ -32,13 +33,14 @@ export default class CreatePage extends Component {
 
   componentDidMount= async() => {
         const elements = await getElements()
-
-        this.setState({elements : elements});
+        const character = await getOneAvatar(this.props.match.id)
+        this.setState({elements : elements, 
+                ...character});
     } 
  
 
     render() {
-        console.log(this.state)
+        
         return (
     <>
         <form onSubmit={this.handleSubmit}>
@@ -68,7 +70,7 @@ export default class CreatePage extends Component {
                 <input className="input" onChange={(e) => this.setState({title: e.target.value})}/>
             
             </label>
-            <button className = "button">Submit</button>
+            <button className = "button">Change</button>
         </form>
     </>
         )
