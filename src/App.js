@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Home from "./Home.js";
 import Gaang from "./Gaang.js";
 import FormFill from './FormFill.js';
+import Edit from './Edit.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -34,6 +35,11 @@ export default class App extends Component {
           path="/FormFill"
           exact
           render={(routerProps)=> <FormFill {...routerProps}/>}
+          />
+           <Route
+          path="/Edit"
+          exact
+          render={(routerProps)=> <Edit {...routerProps}/>}
           />
         </Switch>
         </Router>
