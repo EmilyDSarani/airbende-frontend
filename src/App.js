@@ -16,8 +16,8 @@ export default class App extends Component {
       <>
         <Router>
         <header className= 'not'>
-          <NavLink exact activeClassName='active'  to='/'>Home</NavLink> <br/>
-          <NavLink exact activeClassName='active'  to='/Gaang'>Gaang</NavLink> <br/>
+          <NavLink exact activeClassName='active'  to='/'>Home</NavLink> 
+          <NavLink exact activeClassName='active'  to='/Gaang'>Gaang</NavLink> 
           <NavLink exact activeClassName='active' to='/FormFill'>Character Add</NavLink>
         </header>
         <Switch>

@@ -4,7 +4,7 @@ import GaangItems from './GaangItems'
 export default class GaangList extends Component {
     render() {
         return (
-            <>
+            < div className ='allgang'>
                 {
                     this.props.hotman.map(gaang => <GaangItems 
                         name= {gaang.name}
@@ -13,7 +13,7 @@ export default class GaangList extends Component {
                         img = {gaang.img}
                         />)
                 }
-            </>
+            </div>
         )
     }
 }
