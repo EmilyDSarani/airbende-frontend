@@ -18,14 +18,15 @@ export default class UserEdit extends Component {
 
     handleEditSubmit = async (e)  =>{
         e.preventDefault()
-        await editsAvatar(this.props.match.params.id, this.state)
+        await editsAvatar(this.props.match.params.id, {...this.state, elements: ''}) 
+        //({...this.state, elements: ''}) worked for create page, but next I would like to get it to work here. 
         
            
        this.props.history.push('/Gaang') 
     }
     handleDeleteSubmit = async (e)  =>{
         e.preventDefault()
-        await deleteAvatar(this.props.match.params.id, this.state)
+        await deleteAvatar(this.props.match.params.id, {...this.state, elements: ''})
         
            
        this.props.history.push('/Gaang') 
