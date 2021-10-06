@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 //import request from 'superagent'
 import {
+    getOneAvatar,
     getElements, 
-    postAvatar
+    editsAvatar
 } from '../Utils/fetch-utils'
 export default class CreatePage extends Component {
     state={
@@ -14,9 +15,9 @@ export default class CreatePage extends Component {
     }
     handleSubmit = async (e)  =>{
         e.preventDefault()
-        await postAvatar(this.state)
+        await editsAvatar(this.state)
         // await request
-            // .post('https://airbendercharacters.herokuapp.com/avatar')
+            // .put('https://airbendercharacters.herokuapp.com/avatar')
             // .send({
             //     name: this.state.name, 
             //     element_id: this.state.element_id, 
@@ -32,16 +33,11 @@ export default class CreatePage extends Component {
 
   componentDidMount= async() => {
         const elements = await getElements()
-
-        this.setState({elements : elements});
+        const character = await getOneAvatar(this.props.match.id)
+        this.setState({elements : elements, 
+                ...character});
     } 
-
-    // handleImgSubmit = async(e) =>{
-    //     await this.setState({img:e.target.value});
-    // } 
-    // handleTitleSubmit = async(e) =>{
-    //     await this.setState({title:e.target.value});
-    // } 
+ 
 
     render() {
         
@@ -51,7 +47,7 @@ export default class CreatePage extends Component {
             <label>
             Name
                 <input className="input"  onChange={(e) => this.setState({name: e.target.value})} />
-               { /*onChange={this.handleNameSubmit}*/}
+            
             </label>
             <label>
             Element
@@ -62,19 +58,19 @@ export default class CreatePage extends Component {
                     
                 </option>)}
                 </select>
-                {/* <input className="input" onChange={this.handleElementSubmit} /> */}
+               
             </label>
             <label>
             Img
                 <input className="input" onChange={(e) => this.setState({img: e.target.value})}/>
-            {/* onChange={this.handleImgSubmit} */}
+           
             </label>
             <label>
             Title
                 <input className="input" onChange={(e) => this.setState({title: e.target.value})}/>
-            {/* onChange={this.handleTitleSubmit} */}
+            
             </label>
-            <button className = "button">Submit</button>
+            <button className = "button">Change</button>
         </form>
     </>
         )

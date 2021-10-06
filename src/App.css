@@ -1,6 +1,11 @@
 @import url(//db.onlinewebfonts.com/c/002b944b211d383987536f1ecf684bca?family=Herculanum);
 /* got this font from googling around */
-
+a {
+  margin: 5px;
+}
+label {
+  display: block;
+}
 .active{
   font-family: 'Herculanum';
   background-color: rgb(70, 67, 67);
@@ -9,18 +14,35 @@
 }
 .not{
   font-family: 'Herculanum';
-  background-color: rgb(248, 225, 183);
+  background-color: rgb(255, 242, 217);
   color:black;
   font-size:large;
+  font-weight: bold;
 }
-
+.allgang{
+  display: flex;
+  flex-wrap: wrap;
+}
 .gaang{
   font-family: 'Herculanum';
   color: rgb(75, 11, 11);
-  font-size: xx-large;
+  font-weight: bold;
+  font-size: x-large;
   text-align: center;
-  justify-content: center;
-   
+  cursor: pointer;
+  margin: 15px;
+  border: double rgb(61, 195, 212) 5px; 
+  transition: transform .5s ease-in-out;
+  background-color: rgb(255, 246, 228);
+}
+
+.gaang:hover{
+  transform: translate(30px, 30px) ;
+}
+.img{
+  width: 300px;
+  height: auto;
+  padding: 10px;
 }
 .header{
   font-family: 'Herculanum';
@@ -30,17 +52,4 @@
   color: rgb(0, 0, 63);
   font-size: large;
 }
-.gaangimg{
-  text-align: center;
-  justify-content: center;
-  width: 70%;
-  height:auto;
-  
-}
-.allgang{
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  
-  max-width:100%;
-  height:auto;
-}
+
