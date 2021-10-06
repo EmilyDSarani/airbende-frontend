@@ -9,8 +9,8 @@ export default class GaangItems extends Component {
                 <Link to ={`/Gaang/${this.props.id}`}>
                 <ul>
                     <p>{this.props.name}</p>
-                    <p>Also Known As: The {this.props.title}</p>
-                    <p>Main Element: {this.props.element_name}</p>
+                    <p>{this.props.title}</p>
+                    {/* <p>{this.props.element_name}</p> */}
                     <p><img className="img" src={this.props.img} alt='the Gaang'/></p>
                  
                 </ul>
