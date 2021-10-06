@@ -46,15 +46,15 @@ export default class UserEdit extends Component {
         console.log(this.props.match.params)  
         return (
     <>
-        <form>
+        <form classname = "form">
             <label>
             Name
-                <input className="input"  onChange={(e) => this.setState({name: e.target.value})} />
-            
+                <input value={this.state.name} className="input" onChange={(e) => this.setState({name: e.target.value})} />
+               
             </label>
             <label>
             Element
-                <select className="input" onChange={(e) => this.setState({element_id: Number(e.target.value)})} >
+                <select value={this.state.element_id} className="input" onChange={(e) => this.setState({element_id: Number(e.target.value)})} >
                     {this.state.elements.map(element => 
                 <option value={element.element_id}>
                     {element.element_name} 
@@ -69,7 +69,7 @@ export default class UserEdit extends Component {
             </label>
             <label>
             Title
-                <input className="input" onChange={(e) => this.setState({title: e.target.value})}/>
+                <input value={this.state.title} className="input" onChange={(e) => this.setState({title: e.target.value})}/>
             
             </label>
             <button onClick={this.handleEditSubmit} className = "button">Change</button>

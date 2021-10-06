@@ -47,7 +47,7 @@ export default class CreatePage extends Component {
         
         return (
     <>
-        <form onSubmit={this.handleSubmit}>
+        <form classname = "form" onSubmit={this.handleSubmit}>
             <label>
             Name
                 <input className="input"  onChange={(e) => this.setState({name: e.target.value})} />
