@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 import {
     getOneAvatar,
     getElements, 
-    editsAvatar
+    editsAvatar,
+    deleteAvatar
 } from '../Utils/fetch-utils'
-export default class CreatePage extends Component {
+export default class UserEdit extends Component {
+
     state={
         name: '',
         elements: [],
@@ -13,49 +15,50 @@ export default class CreatePage extends Component {
         title: '',
         element_id: 1,
     }
-    handleSubmit = async (e)  =>{
+
+    handleEditSubmit = async (e)  =>{
         e.preventDefault()
-        await editsAvatar(this.state)
-        // await request
-            // .put('https://airbendercharacters.herokuapp.com/avatar')
-            // .send({
-            //     name: this.state.name, 
-            //     element_id: this.state.element_id, 
-            //     img: this.state.img, 
-            //     title: this.state.title
-            // })
+        await editsAvatar(this.props.match.params.id, {...this.state, elements: ''}) 
+        //({...this.state, elements: ''}) worked for create page, but next I would like to get it to work here. 
+        
            
-       this.props.history.push('/Gaang') //this is like the window relocate
+       this.props.history.push('/Gaang') 
     }
-    // handleNameSubmit = async(e) =>{
-    //     await this.setState({name:e.target.value});
-    // }
+    handleDeleteSubmit = async (e)  =>{
+        e.preventDefault()
+        await deleteAvatar(this.props.match.params.id, {...this.state, elements: ''})
+        
+           
+       this.props.history.push('/Gaang') 
+    }
 
   componentDidMount= async() => {
         const elements = await getElements()
-        const character = await getOneAvatar(this.props.match.id)
+       
+       const character = await getOneAvatar(this.props.match.params.id)
+        console.log(character)
+        
         this.setState({elements : elements, 
-                ...character});
+               ...character});
     } 
  
 
     render() {
-        
+        console.log(this.props.match.params)  
         return (
     <>
-        <form onSubmit={this.handleSubmit}>
+        <form classname = "form">
             <label>
             Name
-                <input className="input"  onChange={(e) => this.setState({name: e.target.value})} />
-            
+                <input value={this.state.name} className="input" onChange={(e) => this.setState({name: e.target.value})} />
+               
             </label>
             <label>
             Element
-                <select className="input" onChange={(e) => this.setState({element_id: Number(e.target.value)})} >
+                <select value={this.state.element_id} className="input" onChange={(e) => this.setState({element_id: Number(e.target.value)})} >
                     {this.state.elements.map(element => 
                 <option value={element.element_id}>
-                    {element.element_name}
-                    
+                    {element.element_name} 
                 </option>)}
                 </select>
                
@@ -67,10 +70,11 @@ export default class CreatePage extends Component {
             </label>
             <label>
             Title
-                <input className="input" onChange={(e) => this.setState({title: e.target.value})}/>
+                <input value={this.state.title} className="input" onChange={(e) => this.setState({title: e.target.value})}/>
             
             </label>
-            <button className = "button">Change</button>
+            <button onClick={this.handleEditSubmit} className = "button">Change</button>
+            <button onClick={this.handleDeleteSubmit} className = "button">Delete</button>
         </form>
     </>
         )

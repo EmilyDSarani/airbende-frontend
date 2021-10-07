@@ -34,7 +34,7 @@ export async function postAvatar(avatar) {
 }
 
 export async function editsAvatar(id, newAvatar) {
-    const response = await request.delete(`https://airbendercharacters.herokuapp.com/avatar/${id}`)
+    const response = await request.put(`https://airbendercharacters.herokuapp.com/avatar/${id}`)
     .send(newAvatar)
     return response.body;
 }

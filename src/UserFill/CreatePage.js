@@ -14,7 +14,8 @@ export default class CreatePage extends Component {
     }
     handleSubmit = async (e)  =>{
         e.preventDefault()
-        await postAvatar(this.state)
+        await postAvatar({...this.state, elements: ''}) //Erich suggested that if I was going to do it like this, then keep in mind my element[] "this will spread in your entire state, then overwrite the elements array with just an empty string"
+        
         // await request
             // .post('https://airbendercharacters.herokuapp.com/avatar')
             // .send({
@@ -47,7 +48,7 @@ export default class CreatePage extends Component {
         
         return (
     <>
-        <form onSubmit={this.handleSubmit}>
+        <form classname = "form" onSubmit={this.handleSubmit}>
             <label>
             Name
                 <input className="input"  onChange={(e) => this.setState({name: e.target.value})} />
