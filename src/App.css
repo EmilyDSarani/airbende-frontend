@@ -1,23 +1,27 @@
 @import url(//db.onlinewebfonts.com/c/002b944b211d383987536f1ecf684bca?family=Herculanum);
 /* got this font from googling around */
-a {
+a{
   margin: 5px;
 }
 label {
   display: block;
 }
+
 .active{
   font-family: 'Herculanum';
-  background-color: rgb(70, 67, 67);
   color:rgb(103, 255, 255);
-  font-size:xx-large;
+  font-size:x-large;
 }
 .not{
   font-family: 'Herculanum';
   background-color: rgb(255, 242, 217);
   color:black;
-  font-size:large;
+  font-size:medium;
   font-weight: bold;
+  padding: 15px;
+}
+a:visited{
+color: rgb(248, 29, 29);
 }
 .allgang{
   display: flex;
@@ -46,11 +50,51 @@ label {
 }
 .header{
   font-family: 'Herculanum';
+  text-align: center;
 }
 .footer{
   font-family: 'Herculanum';
   color: rgb(0, 0, 63);
-  font-size: large;
+  font-size: small;
+  font-weight: bolder;
+  text-align: center;
+}
+.body{
+  display: flex;
+  justify-content: center;
 }
 
+form{
+  font-family: 'Herculanum';
+  font-weight: bold;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
 
+}
+input{
+  font-family: 'Herculanum';
+  font-weight: bold;
+  
+}
+select{
+  font-family: 'Herculanum';
+  font-weight: bold;
+  
+  
+}
+.button{
+  font-family: 'Herculanum';
+  background-color: rgb(103, 255, 255);
+  font-weight: bold;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 45%;
+  border:rgb(0, 8, 56) double 5px;
+  
+}
+.button:hover{
+  font-family: 'Herculanum';
+  background-color: rgb(255, 242, 217);
+  cursor: pointer;
+}

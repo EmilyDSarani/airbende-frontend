@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DelIntro from './UserFill/DelIntro'
 import UserEdit from './UserFill/UserEdit'
+import Footer from './HeaderEct/Footer'
 
 
 export default class Edit extends Component {
@@ -10,6 +11,7 @@ export default class Edit extends Component {
             <div>
             <DelIntro />
              <UserEdit {...this.props} />   
+             <Footer />
             </div>
         )
     }
